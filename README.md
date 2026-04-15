@@ -20,33 +20,37 @@ The end result is that you update one cell in a spreadsheet and a perfectly stru
 
 The steps to be followed are the ones below.
 
-Phase 1: Google Cloud Setup
+**Phase 1: Google Cloud Setup
+**
+- Go to console.cloud.google.com and create a new project
+- Navigate to APIs & Services, search for Google Sheets API and enable it
+- Go to IAM & Admin, open Service Accounts and click Create Service Account
+- Give it a name, skip the optional role and access steps, and save
+- Click on the service account you just created, go to Keys, click Add Key and choose JSON
+- The key file downloads automatically, move it into your project folder
+- Open your Google Sheet, click Share, paste the service account email from the JSON file, set it to Viewer and confirm
 
-Go to console.cloud.google.com and create a new project
-Navigate to APIs & Services, search for Google Sheets API and enable it
-Go to IAM & Admin, open Service Accounts and click Create Service Account
-Give it a name, skip the optional role and access steps, and save
-Click on the service account you just created, go to Keys, click Add Key and choose JSON
-The key file downloads automatically, move it into your project folder
-Open your Google Sheet, click Share, paste the service account email from the JSON file, set it to Viewer and confirm
+**Phase 2 — Local Setup
+**
+- Clone the repository to your machine
+- Open a terminal, navigate into the project folder
+- Run python3 -m venv venv to create a virtual environment
+- Run source venv/bin/activate to activate it
+- Run pip install -r requirements.txt to install dependencies
+- Copy config.example.json to config.json
+- Open config.json and fill in your spreadsheet ID, service account filename, base path, column letters, sheet tab names and their matching local folder names
 
-Phase 2 — Local Setup
-
-Clone the repository to your machine
-Open a terminal, navigate into the project folder
-Run python3 -m venv venv to create a virtual environment
-Run source venv/bin/activate to activate it
-Run pip install -r requirements.txt to install dependencies
-Copy config.example.json to config.json
-Open config.json and fill in your spreadsheet ID, service account filename, base path, column letters, sheet tab names and their matching local folder names
-
-Phase 3 — Background Service
-
-Open the plist file and update the file paths to match your machine
-Copy the plist file to ~/Library/LaunchAgents/
-Run launchctl load ~/Library/LaunchAgents/com.yourname.sheets-watcher.plist
-Run launchctl list | grep sheets-watcher to confirm it is running
-Verify everything works
+**Phase 3 — Background Service
+**
+- Open the plist file and update the file paths to match your machine
+- Copy the plist file to ~/Library/LaunchAgents/
+- Run launchctl load ~/Library/LaunchAgents/com.yourname.sheets-watcher.plist
+- Run launchctl list | grep sheets-watcher to confirm it is running
+- Verify everything works
 
 Run python3 watcher.py --now to trigger an immediate check
 Set any row in your sheet to working on it and confirm the folder appears locally
+
+Show some love on socials 
+! [image of my logohttps://ibb.co/Y7QCn6nm] (https://ibb.co/Y7QCn6nm)
+
