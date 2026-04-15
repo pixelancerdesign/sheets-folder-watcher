@@ -52,5 +52,5 @@ Run python3 watcher.py --now to trigger an immediate check
 Set any row in your sheet to working on it and confirm the folder appears locally
 
 Show some love on socials 
-! [image of my logohttps://ibb.co/Y7QCn6nm] (https://ibb.co/Y7QCn6nm)
+<a href="https://ibb.co/Y7QCn6nm"><img src="https://i.ibb.co/C58cCqCg/final-logo-pixelancer.png" alt="final-logo-pixelancer" border="0" /></a>
 
