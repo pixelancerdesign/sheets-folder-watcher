@@ -1,0 +1,24 @@
+{
+  "spreadsheet_id": "YOUR_GOOGLE_SHEET_ID_HERE",
+  "service_account_file": "your-service-account-filename.json",
+
+  "poll_interval_seconds": 300,
+
+  "base_path": "~/Documents/YOUR_BASE_FOLDER",
+
+  "columns": {
+    "code":   "A",
+    "name":   "B",
+    "status": "D"
+  },
+
+  "trigger_value": "working on it",
+
+  "subfolders": ["Brief", "Links", "Design", "Deliver"],
+
+  "sheet_to_folder": {
+    "Sheet Tab Name 1": "Local_Folder_Name_1",
+    "Sheet Tab Name 2": "Local_Folder_Name_2",
+    "Sheet Tab Name 3": "Local_Folder_Name_3"
+  }
+}
